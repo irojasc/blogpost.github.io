@@ -84,7 +84,7 @@ a {
 
 .home-main {
     width: 100%;
-    height: calc(100vh - 113px);
+    height: calc(100vh - 113px); /* esta parte de aqui la esta cagando */
     background-image: url('../assets/img/Cover.png');
     background-position: center;
     background-size: cover;
@@ -288,18 +288,17 @@ a {
 
 @media screen and (max-width: 500px){
 
-    .home-main {
-        width: 100%;
-        height: calc(100vh - 113px);
-        background-image: url('../assets/img/Cover.png');
-        background-position: center;
-        background-size: cover;
-        background-repeat: no-repeat;
-        padding: 60px;
+    header {
+        /* height: 20vh; */
+        max-height: 113px;
     }
 
-    .home-main a {
-        margin-top: 20px;
+    .home-main {
+        height: calc(100vh - 113px);
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .nav__profile-link{
