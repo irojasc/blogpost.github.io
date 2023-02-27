@@ -17,6 +17,7 @@ header {
     display: grid;
     grid-template-rows: repeat(2, min-content);
     background-color: white;
+    box-shadow: 01px 0px 3px 0px rgba(0,0,0,0.2);
 }
 
 a {
@@ -127,9 +128,9 @@ a {
 }
 
 .main__1section{
+    width: 100%;
     min-width: 320px;
-    display: block;
-    padding: 30px 70px;
+    padding: 30px 5%;
     background-color: #e6e9edff;
 }
 
@@ -140,7 +141,6 @@ a {
 
 .main__1section__main-article{
     display: grid;
-    /* grid-template-columns: repeat(2, 1fr); */
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 60px;
 
@@ -187,7 +187,8 @@ a {
 }
 
 .first-section{
-    min-width: 375px;
+    margin-top: 30px;
+    min-width: 320px;
 }
 
 .noticias-title {
@@ -265,28 +266,61 @@ a {
     font-size: 2rem;
 }
 
+.second-section > hr {
+    display: block;
+    width: 85%; 
+    margin-left: 80px;
+    opacity: 0.7;
+}
+
 @media screen and (max-width: 800px){
 
     .main__1section{
         min-width: 320px;
-        padding: 30px 0px;
     }
 
     .main__1section__main-article{
-        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(90%, 1fr));
     }
 
     .main-posts-container{
-        padding: 0 0px;
-        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        padding: 0 15px;
+        grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
         grid-auto-flow: row;
-        /* grid-template-rows: repeat(2, 1fr); */
         gap: 20px;
     }
+
+    .main-text-container {
+        padding: 20px 10px 20px;
+    }
+
+    .noticias-title {
+        font-size: 2.5rem;
+        padding-left: 0px;
+        margin: 40px 0 20px;
+    }
+
+    .second-section > hr {
+        margin-left: 0px;
+        padding: 0 10px;
+    }
+
 }
 
 
 @media screen and (max-width: 500px){
+
+    .main__1section__main-article{
+        gap: 15px;
+    }
+
+    .main__1section__main-article h2{
+        font-size: 1.8rem;
+    }
+    
+    .parrafito {
+        font-size: 1.4rem;
+    }
 
     header {
         /* height: 20vh; */
@@ -313,5 +347,35 @@ a {
     .social-network__div-icons{
         justify-self: center;
         margin-right: 0;
+    }
+
+    .main-blog {
+        padding: 0 0px;
+    }
+
+    .contact-section{
+        padding: 0;
+    }
+
+    .first-section{
+        padding: 0 10px;
+    }
+
+    .second-section > h3{
+        padding-left: 10px;
+        font-size: 1.8rem;
+    }
+    
+    .second-section > hr{
+        margin-left: 10px;
+    }
+    
+    .main-text-container > h2 {
+        font-size: 2.2rem;
+        margin-bottom: 20px;
+    }
+
+    .parrafote{
+        font-size: 1.6rem;
     }
 }
