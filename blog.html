@@ -9,14 +9,26 @@
     
 </head>
 <body>
+    <input type="radio" name = "Ivan" id="close-icon-event" style="display: none;">
+    <input type="radio" name = "Ivan" id="social-network-input" style="display: none;">
+    
+
+    <div class="shadow"></div>
+    <div class="alert-windown">
+        <h3>La opción no se encuentra habilitada</h3>
+        <label for="close-icon-event"><span class="close-icon" style="display: block;"></span></label>
+    </div>
     <header>
         <section class="social-network">
             <div class="social-network__div-icons">
-                <a href=""><span class="icon_ icon--face"></span></a>
-                <a href=""><span class="icon_ icon--twi"></span></a>
-                <a href=""><span class="icon_ icon--ins"></span></a>
-                <a href=""><span class="icon_ icon--linke"></span></a>
-                <a href=""><span class="icon_ icon--you"></span></a>
+                <input type="checkbox" id="social-network-input" style="display: none;">
+                <label for="social-network-input">
+                    <div class="a"><span class="icon_ icon--face"></span></div>
+                    <div class="a"><span class="icon_ icon--twi"></span></div>
+                    <div class="a"><span class="icon_ icon--ins"></span></div>
+                    <div class="a"><span class="icon_ icon--linke"></span></div>
+                    <div class="a"><span class="icon_ icon--you"></span></div>
+                </label>
             </div>
         </section>
 
@@ -30,7 +42,7 @@
         </nav>
     </header>
 
-    <main class="main-blog">
+    <main class="main-blog" style="background-color: #fff;">
 
         <section class="first-section">
             <img class="main-image" src="./assets/img/main-news-img.png" alt="computadora antigua" style=" display: block; width: 100%; margin: 0 auto;">

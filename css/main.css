@@ -9,6 +9,10 @@ html {
     font-family: 'Roboto Mono', monospace;
 }
 
+body{
+    position: relative;
+}
+
 header {
     position: sticky;
     top: 0px;
@@ -20,9 +24,72 @@ header {
     box-shadow: 01px 0px 3px 0px rgba(0,0,0,0.2);
 }
 
+#social-network-input:checked ~ .shadow, #social-network-input:checked ~ .alert-windown{
+    z-index: 1;
+}
+
+.shadow{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    opacity: 0.6;
+    z-index: -1;
+}
+
+
+.alert-windown{
+    position: fixed;
+    width: calc(0.6 * 100vw);
+    height: 80px;
+    border-radius: 10px;
+    background-color: #ff6b6bff;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: -1;
+    color: #fff;
+    line-height: 30px;
+}
+
+.alert-windown > h3{
+    position: relative;
+    width: 100%;
+}
+
+.close-icon{
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: white;
+    z-index: 1;
+    background-image: url('../assets/img/cruzar.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.close-icon:hover{
+    transform: scale(1.3);
+}
+
 a {
     display: inline-block;
     color: black;
+}
+
+.a {
+    display: inline-block;
+    color: black;
+    cursor: pointer;
+    margin-right: 15px;
 }
 
 .social-network  {
@@ -35,7 +102,7 @@ a {
     display: flex;
     justify-content: space-between;
     justify-self: end;
-    margin: 9px 25px 9px 0px;
+    margin: 9px 10px 9px 0px;
 }
 
 .icon_ {
@@ -169,7 +236,7 @@ a {
 
 .section-title--2section{
     text-align: center;
-    margin-top: 20px;
+    padding-top: 20px;
 }
 
 .main-posts-container{
@@ -187,7 +254,7 @@ a {
 }
 
 .first-section{
-    margin-top: 30px;
+    padding-top: 30px;
     min-width: 320px;
 }
 
@@ -213,17 +280,17 @@ a {
 .contact-section {
     background-color: #e6e9edff ;
     display: grid;
-    padding: 0 70px;
+    padding: 20px 70px;
     grid-template-columns: repeat(2, 1fr);
     grid-auto-flow: column;
     gap: 30px;
-    margin-top: 20px;
 }
 
 .contact-minicontainer {
     justify-self: start;
     margin: 50px 0 90px;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
 }
 
@@ -234,15 +301,16 @@ a {
 }
 
 .profile-header-section {
-    margin: 50px 0;
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+    place-items: center;
     gap: 30px;
-    padding: 50px 200px;
+    padding: 50px 20px;
     background-color: #e6e9edff;
 }
 
 .profile-header-section__text{
+    /* width: 50%; */
     align-self: center;
     font-size: 1.8rem;
     font-weight: bold;
@@ -256,12 +324,13 @@ a {
 
 .projects-section {
     padding: 0 150px;
-    margin: 0 0 50px;
+    margin: 0px 0px 0px;
+    padding-bottom: 50px;
 }
 
 .projects-section-container{
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(fit-content, 1fr));
     gap: 50px;
     font-size: 2rem;
 }
@@ -291,7 +360,7 @@ a {
     }
 
     .main-text-container {
-        padding: 20px 10px 20px;
+        padding: 20px 20px 20px;
     }
 
     .noticias-title {
@@ -344,9 +413,17 @@ a {
         margin: 0 auto;
     }
 
+    .social-network{
+        display: flex;
+        justify-content: center !important;
+    }
+
     .social-network__div-icons{
-        justify-self: center;
-        margin-right: 0;
+        justify-content: space-around;
+        width: 100%;
+        margin: 9px 0;
+        /* justify-self: center; */
+        /* margin-right: 0; */
     }
 
     .main-blog {
@@ -354,7 +431,8 @@ a {
     }
 
     .contact-section{
-        padding: 0;
+        padding: 0 10px;
+        gap: 10px;
     }
 
     .first-section{
@@ -362,12 +440,12 @@ a {
     }
 
     .second-section > h3{
-        padding-left: 10px;
+        padding-left: 20px;
         font-size: 1.8rem;
     }
     
     .second-section > hr{
-        margin-left: 10px;
+        margin-left: 20px;
     }
     
     .main-text-container > h2 {
@@ -377,5 +455,29 @@ a {
 
     .parrafote{
         font-size: 1.6rem;
+    }
+
+    .contact-minicontainer{
+        justify-content: center;
+    }
+
+    .projects-section {
+        padding: 0 30px;
+        margin: 0px 0px 0px;
+        padding-bottom: 50px;
+    }
+
+    .profile-header-section__text{
+        font-size: 1.4rem;
+        padding-bottom: 10px;
+    }
+    
+    .profile-header-section__text h2 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+
+    .projects-section-container p {
+        font-size: 1.4rem;
     }
 }
